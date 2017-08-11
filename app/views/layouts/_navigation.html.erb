@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" src="<%= image_url 'big.png' %>"/>
+                    </span>
+                </div>
+
+                <div class="logo-element">
+                    BIG
+                </div>
+            </li>
+            
+            <li class="<%= is_active_controller('judicial') %>">
+                <a href=""><i class="fa fa-balance-scale" style="font-size:18px"></i> <span class="nav-label">Área Judicial</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse <%= 'active' if current_page?('/') %>">
+                    <li class="<%= is_active_action('civel') %>"><%= link_to "Área Cível", root_path %></li>
+                    </ul>
+            </li>            
+
+            <li class="<%= 'active' if current_page?('/home/minor') %>">
+                <%= link_to "/home/minor" do %>
+                <i class="fa fa-book" style="font-size:18px"></i> <span class="nav-label">Área Administrativa</span>
+                <% end %>
+            </li>
+        </ul>
+
+    </div>
+</nav>
